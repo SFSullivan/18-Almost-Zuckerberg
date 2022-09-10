@@ -1,0 +1,25 @@
+const { Schema, Types } = require('mongoose');
+
+const reactionSchema = new Schema({
+    reaction_id: {
+        type: Chema.Types.ObjectId,
+        default: () => new Types.ObjectsId()
+    },
+    reaction_body: {
+        type: String,
+        required: true
+    },
+    username: {
+        type: String,
+        required: true,
+    },
+    created_at: {
+        type: Date,
+        default: Date.now,
+        get: (current) => {
+            return dateFormat(current);
+        }
+    },
+});
+
+module.exports = reactionSchema;
