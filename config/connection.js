@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('social_media_app', {
+mongoose.connect('mongodb://127.0.0.1:27017/social_media_app', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
-module.exports =mongoose.connection;
+module.exports = mongoose.connection;
